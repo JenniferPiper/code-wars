@@ -1,5 +1,5 @@
 /*
-I intentionally used == instead of === on line 17 and != instead of !== on line 20 because I actually want type coercion here. Apparently typeof(i) is 'string' (what? why?) and I need to compare it to tempArray.length which is of type 'number'. I could parseInt(i), or I could just use == and !=. Would it be better to use parseInt(i)?
+I intentionally used == instead of === on line 18 and != instead of !== on line 21 because I actually want type coercion here. Apparently typeof(i) is 'string' (what? why?) and I need to compare it to tempArray.length which is of type 'number'. I could parseInt(i), or I could just use == and !=. Would it be better to use parseInt(i)?
 */
 function formatWords(words){
   let tempArray = [];
