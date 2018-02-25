@@ -1,7 +1,7 @@
 Code Wars challenge: 
+https://www.codewars.com/kata/calculate-average
 
-
-Problem: 
+Problem: Write function avg which calculates average of numbers in given list.
 
 Whiteboard notes produced by Jennifer Williams Piper.
 
