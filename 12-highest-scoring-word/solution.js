@@ -1,20 +1,30 @@
-//solution in progress. Does not work.
-let test2 = 'these are words';
-
 function high(x){
-  x = x.split(' ');
 
-  console.log(x);
-  let scores = x.map( word => { return word.split('').map( letter => {return score(letter);});});
-  for(let i in scores){
-    scores[i].reduce( (accumulator, currentValue) => {
-      accumulator += currentValue;
-    });
+  x = x.split(' ');
+  let letterScores = x.map( word => word.split('').map( letter => score(letter) ) );
+
+  let scores = [];
+
+  for (let i in letterScores) {
+    if (letterScores[i].length === 0 ) {
+      scores[i] = 0;
+    }
+    else {
+      scores[i] = letterScores[i].reduce((accumulator, currentValue) => accumulator += currentValue);
+    }
   }
-  console.log(scores);
-// return x.map( currentChar => score(currentChar)).reduce((accumulator, currentValue) => accumulator += currentValue);
+
+  let highScore = 0;
+  let highScoreIndex = 0;
+  for (let i in scores) {
+    if(scores[i] > highScore) {
+      highScore = scores[i];
+      highScoreIndex = i;
+    }
+  }
+  return x[highScoreIndex];
+
+  function score (char) {
+    return parseInt(char.charCodeAt()) - 96;
+  }
 }
-function score (char) {
-  return parseInt(char.charCodeAt()) - 96;
-}
-high(test2);
